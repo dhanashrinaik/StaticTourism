@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Packages</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f2f2f2;
+
+        }
+
+
+
+        nav {
+            width: 100%;
+            height: 15Vh;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+
+        }
+
+        #newdiv {
+            width: 100%;
+            height: 20vh;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            justify-content: space-around;
+            align-items: center;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #newdiv .logo {
+            font-size: 60px;
+            padding-top: 0px;
+
+        }
+
+        nav .menu {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding-left: 30px;
+            padding-right: 20px;
+
+        }
+
+        nav .menu a {
+            width: 10%;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .menu a:hover {
+            color: #d12531;
+            font-weight: bold;
+
+        }
+
+        .active {
+            background-color: #03112a;
+            overflow: hidden;
+            border-bottom: 3px solid #00f;
+            padding: 0px;
+
+        }
+
+
+        section {
+            padding: 2rem;
+
+        }
+
+        .heading {
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        .heading span {
+            font-size: 2.5rem;
+            background: rgba(255, 165, 0, .2);
+            color: var(--orange);
+            border-radius: .5rem;
+            padding: 2rem 1rem;
+        }
+
+
+
+        .packages .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            margin: 50px;
+            margin-left: 0px;
+        }
+
+        .packages .box-container .box {
+            width: 30%;
+            margin: 15px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            padding-top: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: .4s;
+            background: #f2f2f2;
+        }
+
+        .packages .box-container .box img {
+            height: 25rem;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .packages .box-container .box .content {
+            padding: 2rem;
+
+        }
+
+        .packages .box-container .box .content h3 {
+            text-align: center;
+            font-size: 30px;
+            margin: 0;
+            padding-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .packages .box-container .box .content h3 i {
+            color: var(--orange);
+        }
+
+        .packages .box-container .box .content p {
+            font-size: 1.7rem;
+            color: #b2bec3;
+            padding: 1rem 0;
+
+        }
+
+        .packages .box-container .box .content .stars span {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .packages .box-container .box .content .stars i {
+            color: orange;
+        }
+
+        .packages .box-container .box .content .price {
+            font-size: 26px;
+            text-align: center;
+            color: #222f3e;
+            margin: 0;
+        }
+
+        .packages .box-container .box .content .price span {
+            color: #666;
+            font-size: 1.5rem;
+            text-decoration: line-through;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--orange);
+            color: black;
+            padding: .8rem 3rem;
+            border: .2rem var(--orange);
+            cursor: pointer;
+            font-size: 1.7rem;
+
+        }
+
+        .btn:hover {
+            background: rgba(255, 165, 0, .2);
+            color: var(--orange);
+        }
+
+
+        footer {
+            position: relative;
+            bottom: 0;
+            background: white;
+            color: #05251f;
+            width: 100%;
+            vertical-align: top;
+
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .left-box,
+        .right-box,
+        .center-box {
+            flex: 1 1 25rem;
+            padding: 10px 40px 10px 40px;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .left-box,
+        .center-box {
+            margin-left: 100px;
+        }
+
+        .right-box {
+            text-align: center;
+            padding: 1px 0 50px 0;
+        }
+
+        .head {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900px;
+            text-transform: uppercase;
+            font-family: 'Schibsted Grotesk', sans-serif;
+            margin-top: 20px;
+            padding-top: 30px;
+        }
+
+        .head:hover {
+            background: #e6dada;
+            font-size: 1.9rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 900px;
+            text-transform: uppercase;
+            font-family: 'IBM Plex Serif', serif;
+
+        }
+
+        h2:hover {
+            font-size: 1.2rem;
+            background: #e6dada;
+            transition: 0.2s;
+        }
+
+        a span {
+            height: 30px;
+            width: 50px;
+            background: #e6dada;
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+            padding-top: 5px;
+            transition: 0.3s;
+            margin-left: 10px;
+        }
+
+        a span:hover {
+            background: #f12020;
+        }
+
+        input[type="email"] {
+            width: 50%;
+            height: 30px;
+        }
+
+        textarea {
+            width: 50%;
+            height: 50px;
+        }
+
+        button {
+            width: 50%;
+            height: 30px;
+            font-size: 18px;
+            border: none;
+            background: #e6dada;
+        }
+
+        button:hover {
+            background: #f12020;
+            font-size: 22px;
+            width: 51%;
+        }
+
+        .text {
+            font-size: 1.2rem;
+            font-weight: 200px;
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="container">
+
+        <div id="newdiv">
+            <marquee behavior="alternate" scrollamount="8" width="60%" height="100px" direction="right">
+                <h1 class="logo"><span class="fancy">Holiday Tours</span></h1>
+            </marquee>
+        </div>
+        <nav>
+
+            <div class="menu">
+                <a href="P.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="packages .html" class="active">Packages</a>
+                <a href="#footer">About Us</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+
+        </nav>
+    </header>
+
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>P</span>
+            <span>A</span>
+            <span>C</span>
+            <span>K</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="mumbai.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fa fa-map-marker-alt"></i>mumbai</h3>
+                    <p>Mumbai (formerly known as Bombay), is famous for its chaotic streets. For bargains and
+                        people-watching, outdoor bazaars top the list of attractions. Popular waterfront destinations
+                        are Marine Drive, where visitors go to watch the sun set over the Arabian Sea, and the
+                        carnival-like Juhu Beach.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">25000 <span>35000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="goa.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>goa</h3>
+                    <p>Goa, a tiny emerald land on the west coast of India, the 25th state of the Union states of India,
+                        was liberated from Portuguese rule in 1961.Lying on the western coast, Goa is India's smallest
+                        state and unlike any other, known for its endless beaches, stellar nightlife, eclectic seafood,
+                        world-heritage listed architecture. </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">30000 <span>40000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="jaipur.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>jaipur</h3>
+                    <p>Jaipur holds the distinction of being the first planned city of India. Renowned globally for its
+                        coloured gems, the capital city of Rajasthan combines the allure of its ancient history with all
+                        the advantages of a metropolis. The bustling modern city is one of the three corners of the
+                        golden triangle that includes Agra and Jaipur.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">30000 <span>35000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+
+            </div>
+            <div class="box">
+                <img src="agra.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>agra</h3>
+                    <p>Agra is a popular tourist destination as it is home to one of the 7 wonders of the world, the Taj
+                        Mahal. It is a sneak peek into the architectural history and legacy of the Mughal empire with
+                        two other UNESCO World Heritage Sites Agra Fort and Fatehpur Sikri. History, architecture,
+                        romance all together create the magic of Agra, and hence, makes for a must-visit for anyone
+                        living in or visiting India.Agra is one of the most populous cities in Uttar Pradesh and 24th
+                        most populous city in India.
+                    </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">25000 <span>35000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+
+            </div>
+            <div class="box">
+                <img src="jammukashmir.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>jammu-kashmir</h3>
+                    <p>Kashmir, the northernmost geographical region of the Indian subcontinent
+                        Jammu and Kashmir (union territory), a region administered by India as a union territory since
+                        2019
+                        Jammu and Kashmir (state), a region administered by India as a state from 1952 to 2019
+                        Jammu and Kashmir (princely state), a princely state of the British Raj extending into the
+                        Indian Union between 1846 and 1952
+                        Azad Jammu and Kashmir, or Azad Kashmir, a region administered by Pakistan as an autonomous
+                        administrative division</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">45000 <span>50000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+
+            </div>
+            <div class="box">
+                <img src="mysore.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>mysore</h3>
+                    <p>Famously known as The City of Palaces, it wouldn’t be wrong to say that Mysore, currently Mysuru,
+                        is one of the most important places in the country regarding ancient reigns. It is replete with
+                        the history of its dazzling royal heritage, intricate architecture, its famed silk sarees, yoga,
+                        and sandalwood, to name just a few. Mysore is the third most populated city in Karnataka, and
+                        its rich heritage draws millions of tourists all year round. The highlight is the majestic
+                        Mysore Palace, a UNESCO World Heritage Site, which is a must-visit.
+
+                    </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">25000 <span>35000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+
+            </div>
+            <div class="box">
+                <img src="hydrabad.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>hydrabad</h3>
+                    <p>Hyderabad,it is Telangana’s largest and most-populous city and is the major urban centre for all
+                        of south-central interior India. From 1956 to 2014 Hyderabad was the capital of Andhra Pradesh
+                        state, but, with the creation of Telangana from Andhra Pradesh in 2014, it was redesignated as
+                        the capital of both states.Hyderabad is located on the Musi River in the heart of the Telangana
+                        Plateau, a major upland region of the Deccan (peninsular India).</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">25000 <span>35000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="newdelhi.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>new-delhi</h3>
+                    <p>New Delhi is situated in the north-central part of India on the west bank of the Yamuna
+                        River,adjacent to and just south of Old Delhi.New Delhi,national capital of India. It is
+                        situated in the north-central part of the country on the west bank of the Yamuna River, adjacent
+                        to and just south of Delhi city (Old Delhi) and within the Delhi national capital territory.The
+                        city has many historical monuments and tourist attractions as well as lively marketplaces.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">45000 <span>55000</span></div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="Ladakh.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i>ladakh</h3>
+                    <p> Ladakh, the newly created Union Territory in India (previously a part of Jammu & Kashmir),
+                        boasts a landscape that can leave you with your jaws dropped. It is a place where the landscape
+                        changes dramatically; it is truly astonishing to see the mountains, snow, cold desert, alpine
+                        meadows and lakes at a short distance from each other. Tourism in Ladakh is an absolute delight
+                        for nature lovers as well as adventurers.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">60000 <span>75000</span></div>
+                    <a href="" class="btn">book now</a>
+                </div>
+            </div>
+    </section>
+
+    <footer id="footer">
+        <h1 class="head">About Us </h1>
+        <div class="main-content">
+            <div class="left-box">
+                <h2>Social Media Platforms</h2><br>
+                <a href="https://www.facebook.com/login/"><span class="fa-brands fa-facebook-f"></span></a> <span
+                    class="text">Facebook</span><br><br>
+                <a href="https://twitter.com/i/flow/login"><span class="fa-brands fa-twitter"> </span></a>
+                <span class="text">Twitter</span><br><br>
+                <a href="https://www.instagram.com/accounts/login"><span class="fa-brands fa-instagram"> </span></a>
+                <span class="text">Instagram</span>
+            </div>
+
+
+
+            <div class="center-box">
+
+                <h2>Address</h2><br>
+                <div class="place">
+                    <span class="fa-sharp fa-solid fa-location-dot"></span>
+                    <span class="text">Kolhapur</span>
+                </div><br>
+                <div class="phone">
+                    <span class="fa-solid fa-phone"></span><span class="text">+083 765432100</span>
+                </div> <br>
+                <div class="email">
+                    <span class="fa-solid fa-envelope"></span>
+                    <span class="text">HolidayTours@123.com</span>
+                </div><br>
+
+            </div>
+
+            <div class="right-box">
+                <h2>
+                    Contact Us
+                </h2><br>
+                <form action="#">
+                    <div>
+                        <div class="text">Email *</div>
+                        <input type="email" required>
+                    </div>
+                    <div>
+                        <div class="text">Message *</div>
+                        <textarea rows="2" cols="25" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

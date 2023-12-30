@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+    <style>
+        body {
+            background-color: #e9e9e9;
+            text-align: center;
+            font-family: 'IBM Plex Serif', serif;
+        }
+
+        nav {
+    width: 100%;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+   
+}
+
+#newdiv {
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#newdiv .logo {
+    font-size: 60px;
+    padding-top: 0px;
+
+}
+
+nav .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 30px;
+    padding-right: 20px;
+    
+}
+
+nav .menu a {
+    width: 10%;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+   text-align: center;
+}  
+
+.menu a:hover {
+    color: #12988f;
+    font-weight: bold;
+
+}
+.active {
+   background-color: #03112a;
+    overflow:hidden;
+    border-bottom:3px solid #00f;
+    padding:0px;
+  }
+
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .box {
+            overflow: hidden;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0.1);
+            border: 0.8rem solid #fff;
+            border-radius: 5rem;
+            position: relative;
+            height: 25rem;
+            flex: 1 1 30rem;
+        }
+
+        .box:hover {
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+        }
+
+        .content {
+            position: absolute;
+            top: -100;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 10px;
+            background: rgba(0, 0, 0, .7);
+            padding-top: 0px;
+        }
+
+        .box:hover .content {
+            top: 0;
+        }
+
+        .placename {
+            margin-top: 0px;
+            font-size: 2.5rem;
+            color: orange;
+            padding: 4rem 0;
+        }
+
+        .placeinfo {
+            font-size: 1.3rem;
+            color: #eee;
+        }
+
+        .btn {
+            background: orange;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 80px;
+            text-transform: uppercase;
+
+        }
+
+        p {
+            font-size: 30px;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .multicolortext {
+            background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            background: white;
+            color: #05251f;
+            width: 100%;
+            vertical-align: top;
+
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .left-box,
+        .right-box,
+        .center-box {
+            flex: 1 1 25rem;
+            padding: 10px 40px 10px 40px;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .left-box,
+        .center-box {
+            margin-left: 100px;
+        }
+
+        .right-box {
+            text-align: center;
+            padding: 1px 0 50px 0;
+        }
+
+        .head {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900px;
+            text-transform: uppercase;
+            font-family: 'Schibsted Grotesk', sans-serif;
+            margin: 40px;
+        }
+
+        .head:hover {
+            background: #e6dada;
+            font-size: 1.9rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 900px;
+            text-transform: uppercase;
+            font-family: 'IBM Plex Serif', serif;
+
+        }
+
+        h2:hover {
+            font-size: 1.2rem;
+            background: #e6dada;
+            transition: 0.2s;
+        }
+
+        a span {
+            height: 30px;
+            width: 50px;
+            background: #e6dada;
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+            padding-top: 5px;
+            transition: 0.3s;
+            margin-left: 10px;
+        }
+
+        a span:hover {
+            background: #f12020;
+        }
+
+        input[type="email"] {
+            width: 50%;
+            height: 30px;
+        }
+
+        textarea {
+            width: 50%;
+            height: 50px;
+        }
+
+        button {
+            width: 50%;
+            height: 30px;
+            font-size: 18px;
+            border: none;
+            background: #e6dada;
+        }
+
+        button:hover {
+            background: #f12020;
+            font-size: 22px;
+            width: 51%;
+        }
+
+        .text {
+            font-size: 1.2rem;
+            font-weight: 200px;
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+    <title> Gallery </title>
+
+</head>
+
+<body>
+    <header class="container">
+
+        <div id="newdiv">
+            <marquee behavior="alternate" scrollamount="8" width="60%" height="100px" direction="right">
+                <h1 class="logo"><span class="fancy">Holiday Tours</span></h1>
+            </marquee>
+        </div>
+        <nav>
+
+            <div class="menu">
+                <a href="P.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="packages .html">Packages</a>
+                <a href="#footer">About Us</a>
+                <a href="login.html">Login</a>
+
+            </div>
+        </nav>
+        </header>
+
+    <h1>
+        <span class="multicolortext">Gallery</span>
+    </h1>
+
+    <p>Top Destinations</p>
+
+
+    <div class="img-container">
+        <div class="box">
+            <img src="WhatsApp Image 2023-04-13 at 5.42.18 PM (1).jpeg">
+            <div class="content">
+                <h3 class="placename"> Cola Beach, Goa</h3>
+                <p class="placeinfo">Located on the country's west coast, Goa is home to numerous fine beaches and has a
+                    reputation as a popular resort destination.
+                    Of the many beaches here, Cola Beach is one of the best places to snap a photo at sunset.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image7.jpg">
+            <div class="content">
+                <h3 class="placename">Bandra-Worli Sea Link, Mumbai</h3>
+                <p class="placeinfo">Connecting Mumbai's main business district to the rest of the city, the
+                    Bandra-Worli Sea Link makes for a stunning photo backdrop - especially at night.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="WhatsApp Image 2023-04-13 at 5.42.18 PM.jpeg">
+            <div class="content">
+                <h3 class="placename">Mumbai</h3>
+                <p class="placeinfo">Mumbai (formerly known as Bombay), is famous for its chaotic streets. For bargains and
+                    people-watching, outdoor bazaars top the list of attractions. Popular waterfront destinations
+                    are Marine Drive, where visitors go to watch the sun set over the Arabian Sea, and the
+                    carnival-like Juhu Beach.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image2.jpg">
+            <div class="content">
+                <h3 class="placename">Kapaleeshwarar Temple, Chennai</h3>
+                <p class="placeinfo">India is a land of temples, all just begging to be photographed. One of the most
+                    beautiful is the Kapaleeshwarar Temple in Chennai, a colorful Hindu temple dedicated to the god
+                    Shiva.
+                    This picture, which shows just a portion of the complex, is of the temple entrance.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image5.jpg">
+            <div class="content">
+                <h3 class="placename">Mehrangarh Fort, Jodhpur</h3>
+                <p class="placeinfo">Shown here lit up at night, the Mehrangarh Fort – also known as the "Blue City" –
+                    dominates the city of Jodhpur.
+
+                    While some of the best shots are of the fort in the distance, make sure you book a tour of this
+                    incredible structure.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image6.jpg">
+            <div class="content">
+                <h3 class="placename">Darjeeling, West Bengal</h3>
+                <p class="placeinfo">Famous the world over for its tea, Darjeeling in West Bengal makes for a great
+                    jumping-off point for those wanting to explore the Himalayas.
+
+                    This lush, fertile region also offers no shortage of stunning vistas.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image4.jpg">
+            <div class="content">
+                <h3 class="placename">Golden Temple, Amritsar</h3>
+                <p class="placeinfo">Of all India's many beautiful temples, few can match the Golden Temple of Amritsar
+                    (Harmandir Sahib). Built in 1604, this magnificent building is further enhanced by its waterside
+                    setting.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image0.jpg">
+            <div class="content">
+                <h3 class="placename">Taj Mahal, Agra</h3>
+                <p class="placeinfo">Few structures anywhere on the planet can be considered as romantic as the Taj
+                    Mahal in Agra.
+                    Built by an emperor in the 1600s as the final resting place of his favorite wife, this beautiful
+                    white marble edifice stands as a testament to love and makes for an incredible photograph.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image8.jpg">
+            <div class="content">
+                <h3 class="placename">Qutub Minar, New Delhi</h3>
+                <p class="placeinfo">The red sandstone minaret in Qutub Minar in New Delhi makes for a very dramatic
+                    photo.
+                    The country's largest minaret is set in a large complex housing numerous old tombs and other
+                    interesting structures.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image10.jpg">
+            <div class="content">
+                <h3 class="placename">Mecca Masjid, Hyderabad</h3>
+                <p class="placeinfo">Built in the early 17th century and one of the country's oldest (and largest)
+                    mosques, Hyderabad's Mecca Masjid is one of India's most popular religious landmarks to photograph.
+                    Consisting of 15 huge arches, a massive main gate, and a large public square, the building can house
+                    up to 10,000 worshippers at any one time.
+                </p>
+                <a href="Packages.html" class="btn">See More</a>
+            </div>
+        </div>
+
+
+
+        <footer id="footer">
+            <h1 class="head">About Us </h1>
+            <div class="main-content">
+                <div class="left-box">
+                    <h2>Social Media Platforms</h2><br>
+                    <a href="https://www.facebook.com/login/"><span class="fa-brands fa-facebook-f"></span></a>
+                    <span class="text">Facebook</span><br><br>
+                    <a href="https://twitter.com/i/flow/login"><span class="fa-brands fa-twitter"> </span></a>
+                    <span class="text">Twitter</span><br><br>
+                    <a href="https://www.instagram.com/accounts/login"><span class="fa-brands fa-instagram"> </span></a>
+                    <span class="text">Instagram</span>
+                </div>
+
+
+
+                <div class="center-box">
+
+                    <h2>Address</h2><br>
+                    <div class="place">
+                        <span class="fa-sharp fa-solid fa-location-dot"></span>
+                        <span class="text">Kolhapur</span>
+                    </div><br>
+                    <div class="phone">
+                        <span class="fa-solid fa-phone"></span><span class="text">+083 765432100</span>
+                    </div> <br>
+                    <div class="email">
+                        <span class="fa-solid fa-envelope"></span>
+                        <span class="text">HolidayTours@123.com</span>
+                    </div><br>
+
+                </div>
+
+                <div class="right-box">
+                    <h2>
+                        Contact Us
+                    </h2>
+                    <form action="#">
+                        <div>
+                            <div class="text">Email *</div>
+                            <input type="email" required>
+                        </div>
+                        <div>
+                            <div class="text">Message *</div>
+                            <textarea rows="2" cols="25" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
